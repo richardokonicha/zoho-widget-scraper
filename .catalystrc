@@ -1,0 +1,38 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "6686000000007022",
+      "name": "Project-Rainfall",
+      "domain": {
+        "id": "10087281628",
+        "name": "project-rainfall-860841904.development"
+      },
+      "timezone": "Africa/Lagos",
+      "env": [
+        {
+          "idx": 1,
+          "id": "860841904",
+          "name": "Development",
+          "type": 3,
+          "env_status": "Active",
+          "project_details": {
+            "project_name": "Project-Rainfall",
+            "id": "6686000000007022",
+            "project_type": "Live"
+          },
+          "is_default": true,
+          "action_required": false
+        }
+      ]
+    }
+  ]
+}

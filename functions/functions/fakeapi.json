@@ -1,0 +1,97 @@
+{
+    "data": [
+       {
+         "name": "Renaissance New York Midtown Hotel",
+         "price": "$244",
+         "score": "Scored 8.5",
+         "reviews": 1555
+       },
+
+       {
+         "name": "The Chelsean New York",
+         "price": "$139",
+         "score": "Scored 7.1",
+         "reviews": 2027
+       },
+
+       {
+         "name": "Crowne Plaza Times Square Manhattan, an IHG Hotel",
+         "price": "$179",
+         "score": "Scored 7.7",
+         "reviews": 7787
+       },
+       {
+         "name": "The New Yorker, A Wyndham Hotel",
+         "price": "$169",
+         "score": "Scored 7.7",
+         "reviews": 15625
+       },
+       {
+         "name": "Ameritania at Times Square",
+         "price": "$171",
+         "score": "Scored 7.9",
+         "reviews": 5945
+       },
+       {
+         "name": "Hotel Indigo NYC Financial District, an IHG Hotel",
+         "price": "$169",
+         "score": "Scored 8.8",
+         "reviews": 1244
+       },
+       {
+         "name": "Fairfield Inn & Suites by Marriott New York Manhattan/Chelsea",
+         "price": "$186",
+         "score": "Scored 7.9",
+         "reviews": 1054
+       },
+       {
+         "name": "Hilton Garden Inn New York/Manhattan-Chelsea",
+         "price": "$189",
+         "score": "Scored 7.9",
+         "reviews": 4361
+       },
+       {
+         "name": "La Quinta by Wyndham New York City Central Park",
+         "price": "$113",
+         "score": "Scored 6.5",
+         "reviews": 4376
+       },
+       {
+         "name": "Holiday Inn Express Manhattan Midtown West, an IHG Hotel",
+         "price": "$159",
+         "score": "Scored 7.0",
+         "reviews": 1524
+       },
+       {
+         "name": "Hampton Inn Manhattan-35th St Empire State Bldg",
+         "price": "$189",
+         "score": "Scored 8.2",
+         "reviews": 6840
+       },
+       {
+         "name": "Ravel Hotel Trademark Collection by Wyndham",
+         "price": "$143",
+         "score": "Scored 7.7",
+         "reviews": 2951
+       },
+       {
+         "name": "Aliz Hotel Times Square",
+         "price": "$159",
+         "score": "Scored 8.0",
+         "reviews": 5997
+       },
+       {
+         "name": "SpringHill Suites by Marriott New York Manhattan Times Square",
+         "price": "$219",
+         "score": "Scored 8.4",
+         "reviews": 98
+       },
+       {
+         "name": "Paramount Hotel Times Square",
+         "price": "$139",
+         "score": "Scored 6.6",
+         "reviews": 5877
+       }
+    ]
+  }
+  

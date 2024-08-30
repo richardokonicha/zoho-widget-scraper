@@ -1,0 +1,8 @@
+.build/functions/functions/node_modules/
+.build/functions/functions/node_modules/axios/SECURITY.md
+**/node_modules/
+*/*/node_modules/
+functions/functions/node_modules/
+functions/functions/catalyst-debug.log
+catalyst-debug.log
+.build/

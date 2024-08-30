@@ -1,0 +1,12 @@
+{
+	"name": "functions",
+	"version": "1.0.0",
+	"main": "index.js",
+	"author": "richardokonicha@gmail.com",
+	"dependencies": {
+		"axios": "^1.7.5",
+		"cors": "^2.8.5",
+		"express": "^4.19.2",
+		"zcatalyst-sdk-node": "^2.5.1"
+	}
+}
