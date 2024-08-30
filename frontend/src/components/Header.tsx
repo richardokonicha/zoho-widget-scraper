@@ -1,4 +1,3 @@
-// The Svg logo component on the Main App wide Header component
 function Svg() {
   return (
     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" className="inline-block mr-3">
@@ -21,9 +20,9 @@ function Svg() {
 
 function Header() {
   return (
-    <header className="bg-white shadow-dash p-4 flex justify-center items-center">
+    <header className="bg-white shadow-dash p-4 justify-center items-center hidden md:flex">
       <Svg />
-      <h1 className="font-head text-2xl ">Dashboard</h1>
+      <h1 className="font-head text-2xl ">Booking Search Zoho Widget</h1>
     </header>
   );
 }

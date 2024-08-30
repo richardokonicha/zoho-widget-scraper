@@ -1,25 +1,37 @@
-// A tailwind configuration file to configure and extend the default theme.
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: ["class"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
+  prefix: "",
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      // colors: {
-      //   primary: '#555B6E',
-      //   background: '#E5E5E5',
-      //   text: '#555B6E',
-      //   accent: '#258060',
-      //   border: '#B8BBC6',
-      // },
-      // fontFamily: {
-      //   head: ['Zilla Slab', 'serif'],
-      //   halyard: ['Halyard Text', 'sans-serif'],
-      // },
-      // boxShadow: {
-      //   dash: '0px 0.1px 0.3px rgba(0, 0, 0, 0.1), - 1px 1px 3px rgba(0, 0, 0, 0.15)',
-      //   table: '0px 0.1px 0.3px rgba(0, 0, 0, 0.1), -1px 1px 3px rgba(0, 0, 0, 0.15)',
-      // },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  // eslint-disable-next-line global-require
-};
+  plugins: [require("tailwindcss-animate")],
+}

@@ -1,16 +1,4 @@
-// The search and filter components html and tailwind
-
-// import type { SearchProps, ClickRatingEvent, Target } from '../react-app-env';
-
-export default function Search({ setSearchValue, setRatingFilter, ratingFilter }: any) {
-  const handleRatings = (e: any) => {
-    const { value } = e.target;
-    if (ratingFilter.includes(value) === true) {
-      setRatingFilter(ratingFilter.filter((i: string) => i !== value));
-    } else {
-      setRatingFilter([...ratingFilter, value]);
-    }
-  };
+export default function Search({ setSearchValue }: any) {
   return (
     <div className="flex">
       <input
@@ -19,22 +7,6 @@ export default function Search({ setSearchValue, setRatingFilter, ratingFilter }
         placeholder="Search here!"
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <div className="flex items-center sm:space-x-3 space-x-1 font-xs">
-        {['1', '2', '3', '4', '5'].map((item: string) => (
-          <button
-            type="button"
-            key={item}
-            value={item}
-            onClick={(e) => handleRatings(e)}
-            className={
-              `text-primary bg-white rounded-full flex justify-center items-center w-7 h-7 font-xs ${ratingFilter.includes(item) && 'bg-accent text-slate-50 '
-              } hover:shadow-lg`
-            }
-          >
-            {item}
-          </button>
-        ))}
-      </div>
     </div>
   );
 }
