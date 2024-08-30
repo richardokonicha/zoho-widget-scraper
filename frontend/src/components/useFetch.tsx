@@ -27,7 +27,6 @@ const useFetch = () => {
       });
   
       const result = await response.json();
-      debugger;
       if (result && Array.isArray(result)) {
         setData(result);
       } else {

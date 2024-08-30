@@ -129,8 +129,6 @@ export const columns: ColumnDef<DataProps>[] = [
 
 export function DataTable({ data }: { data: DataProps[] }) {
   const { refetch, fetching } = useFetch();
-  console.log("Data: ", data);
-
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -161,8 +159,12 @@ export function DataTable({ data }: { data: DataProps[] }) {
     const selectedRows = table
       .getSelectedRowModel()
       .rows.map((row) => row.original);
-    refetch()
     console.log("Selected Rows: ", selectedRows);
+  };
+
+  const handleRefetch = () => {
+    console.log("Refetching...");
+    refetch();
   };
 
   return (
@@ -176,7 +178,21 @@ export function DataTable({ data }: { data: DataProps[] }) {
           }
           className="max-w-sm"
         />
-        <Button onClick={handleSave}>Add to CRM</Button>
+        <Button onClick={handleSave} variant="outline" className="mx-1">
+          Add to CRM
+        </Button>
+
+        <Button onClick={handleRefetch} variant="outline" className="mx-1">
+          {fetching ? (
+            <>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+              {"  "} Refetch...
+            </>
+          ) : (
+            <>{"  "} Refetch</>
+          )}
+        </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
@@ -259,34 +275,33 @@ export function DataTable({ data }: { data: DataProps[] }) {
 export function SkeletonTable() {
   return (
     <div className="w-full">
-    <div className="flex items-center py-4">
-    <Skeleton className="w-[200px] h-[20px] rounded-full" />
-
-    </div>
-    <div className="rounded-md border">
-      <Table>
-        <TableHeader>
-          <TableRow>
-            {columns.map((column) => (
-              <TableHead key={column.id}>
-                <Skeleton className="w-[70px] h-[20px] rounded-full" />
-              </TableHead>
-            ))}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <TableRow key={index}>
+      <div className="flex items-center py-4">
+        <Skeleton className="w-[200px] h-[20px] rounded-full" />
+      </div>
+      <div className="rounded-md border">
+        <Table>
+          <TableHeader>
+            <TableRow>
               {columns.map((column) => (
-                <TableCell key={column.id}>
+                <TableHead key={column.id}>
                   <Skeleton className="w-[70px] h-[20px] rounded-full" />
-                </TableCell>
+                </TableHead>
               ))}
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+          </TableHeader>
+          <TableBody>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <TableRow key={index}>
+                {columns.map((column) => (
+                  <TableCell key={column.id}>
+                    <Skeleton className="w-[70px] h-[20px] rounded-full" />
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </div>
   );
 }
