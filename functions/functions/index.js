@@ -4,6 +4,7 @@ const express = require("express");
 const catalyst = require("zcatalyst-sdk-node");
 const axios = require("axios");
 const cors = require("cors");
+require('dotenv').config();
 
 const app = express();
 app.use(express.json());
@@ -17,8 +18,20 @@ app.timeout = 120000;
 const tableName = "BookingList";
 const dataColumn = "data";
 
-const BRIGHT_DATA_API_TOKEN = "c1603e50-237b-4604-b6e0-0ccaceffe696";
-const BRIGHT_DATA_COLLECTOR_ID = "c_m0f2cu0inmzo0s00a";
+// const BRIGHT_DATA_API_TOKEN = "c1603e50-237b-4604-b6e0-0ccaceffe696";
+// const BRIGHT_DATA_COLLECTOR_ID = "c_m0f2cu0inmzo0s00a";
+
+const port = process.env.PORT || 3000;
+const BRIGHT_DATA_API_TOKEN = process.env.BRIGHT_DATA_API_TOKEN;
+const BRIGHT_DATA_COLLECTOR_ID = process.env.BRIGHT_DATA_COLLECTOR_ID;
+
+if (!BRIGHT_DATA_API_TOKEN || !BRIGHT_DATA_COLLECTOR_ID) {
+  console.error("BRIGHT_DATA_API_TOKEN is not provided");
+  process.exit(1);
+}
+
+console.log(process.env.BRIGHT_DATA_COLLECTOR_ID); 
+
 
 // Retry configuration
 const MAX_RETRIES = 10;
