@@ -1,7 +1,15 @@
 import { useEffect, useState } from 'react';
 
-// const API_URL = 'https://project-rainfall-860841904.development.catalystserverless.com/server/functions';
-const API_URL='http://localhost:3000/server/functions'
+let API_URL = process.env.REACT_APP_API_URL;
+
+if (!API_URL) {
+  console.error('REACT_APP_API_URL environment variable not set');
+  throw new Error('REACT_APP_API_URL environment variable not set');
+} else {
+  API_URL = API_URL + '/server/functions';
+  console.log('API_URL:', API_URL);
+}
+console.log("API URL:", API_URL);
 
 export type DataProps = {
   name: string;
